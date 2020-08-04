@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+ @import url( 'https://fonts.googleapis.com/css?family=Roboto:400,700|Material+Icons');
+
+/* @import "~material-design-icons-iconfont/dist/material-design-icons";
+@import '~@angular/material/theming';
+@import '~material-design-icons/iconfont/material-icons.css'; */
+.userdetails 
+{
+width: 100%;
+height:100%;
+}
+body{
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    background-color: #d3d3d354;
+}

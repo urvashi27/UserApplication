@@ -1,0 +1,62 @@
+<div fxLayout="column" style="padding: 10%;">
+  <div fxLayout="row" style="width: 100%;"  fxLayoutAlign="start stretch">
+    <div fxLayout="column" fxFlex="20" fxLayoutAlign="start stretch"></div>
+    <div fxLayout="column" fxFlex="60" fxLayoutAlign="start stretch">
+    <form [formGroup]="userform" >
+    <mat-card class="outercard">
+      <mat-toolbar>Add user</mat-toolbar>
+     
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field style="margin-top: 1em;">
+          <input matInput placeholder="Name" formControlName="name" [ngClass]="{'is-invalid':submitted && f.name.errors}">
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <mat-hint *ngIf="f.name.errors.required">Name is required</mat-hint>
+            <mat-hint *ngIf="f.name.errors.pattern">Name is invalid</mat-hint>
+          </div>
+        </mat-form-field>
+
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field>
+          <input matInput (keypress)="keyPress($event)"  placeholder="phone number" formControlName="phoneNumber" 
+          class="form-control" [ngClass]="{ 'is-invalid':submitted && f.phoneNumber.errors }" >
+          <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+            <mat-hint *ngIf="f.phoneNumber.errors.required">Phone number is required</mat-hint>
+            <mat-hint *ngIf="f.phoneNumber.errors.pattern || f.phoneNumber.errors.maxlength || f.phoneNumber.errors.minlength">Phone number must be at least 10 numbers</mat-hint>
+          </div>
+        </mat-form-field>
+
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" class="form-control" [ngClass]="{'is-invalid':submitted && f.email.errors}">
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <mat-hint *ngIf="f.email.errors.required">Email is required</mat-hint>
+          </div>
+        </mat-form-field>
+
+      </div>
+     
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-form-field>
+          <mat-label>Favorite subject</mat-label>
+    <mat-select  name="subjects" placeholder="Favorite subject" formControlName="subject" [(value)]="selectedValue">
+      <mat-option *ngFor="let sub of subjects" [value]="sub.value">
+        {{sub.viewValue}}
+      </mat-option>
+      <!-- <mat-hint *ngIf="f.subject.errors.required">Phone number is required</mat-hint> -->
+    </mat-select>
+         
+        </mat-form-field>
+
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button style="width:50%" color="primary" type="button" (click)="add()" mat-raised-button>submit</button>
+      </div>
+    </mat-card>
+    </form>
+  </div>
+  <div fxLayout="column" fxFlex="20" fxLayoutAlign="start stretch"></div>
+  </div>
+
+</div>
