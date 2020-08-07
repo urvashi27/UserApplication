@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {StaticdataService} from '../staticdata.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -9,12 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DashboardComponent implements OnInit {
-
+  displayedColumns: string[] = ['name','phoneNumber','email','subject'];
+  dataSource=new MatTableDataSource(this.service.userDetails);
  
-  constructor() { }
+  constructor(private service: StaticdataService) { }
   ngOnInit()
   {
-    
+   this.dataSource = new MatTableDataSource( this.service.userDetails);
+   console.log(this.dataSource);
   }
   
   public pieChartLabels:string[] = ["Pending", "InProgress", "OnHold", "Complete", "Cancelled"];

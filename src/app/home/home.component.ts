@@ -37,6 +37,6 @@ export class HomeComponent implements OnInit {
   }
   navigateTo(arg,sidenav){
     this.router.navigate([`${arg}`]);
-     sidenav.close();
+    // sidenav.close();
     }
 }
