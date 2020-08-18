@@ -1,6 +1,14 @@
 # UserAssignment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.4.
+It is assignment project for Stridebiz consulting.
+this project consist of four components dashboard ,Adduser,and Login.
+Any user can login with username and password.User first login with username it must be 8 letters and password should be 6 letters.
+It will navigate to dashboard component and 
+it will display pie chart and bar chart on some dumy data.
+Add user component is  for adding particular user details.
+name,email,phone number and favourite subjects.
+In this app particular user can logout on click of logout icon.
 
 ## Development server
 
