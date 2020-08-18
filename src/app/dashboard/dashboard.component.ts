@@ -10,13 +10,17 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 
 export class DashboardComponent implements OnInit {
+
   displayedColumns: string[] = ['name','phoneNumber','email','subject'];
-  dataSource=new MatTableDataSource(this.service.userDetails);
+  dataSource:any;
+  
+
  
   constructor(private service: StaticdataService) { }
   ngOnInit()
   {
-   this.dataSource = new MatTableDataSource( this.service.userDetails);
+    this.dataSource=new MatTableDataSource(this.service.userDetails);
+  // this.dataSource =  this.service.userDetails;
    console.log(this.dataSource);
   }
   
